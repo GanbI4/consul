@@ -640,6 +640,7 @@ RPC:
 
 	// Perform a random shuffle
 	out.Nodes.Shuffle()
+	out.Nodes.SortByTags()
 
 	// Add various responses depending on the request
 	qType := req.Question[0].Qtype

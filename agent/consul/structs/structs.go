@@ -540,6 +540,16 @@ func (nodes CheckServiceNodes) Shuffle() {
 	}
 }
 
+func (nodes CheckServiceNodes) SortByTags() {
+	for i := len(nodes) - 1; i > 0; i-- {
+		for _, tag := range nodes[i].Service.Tags {
+			if tag == "preffered" {
+				nodes[0], nodes[i] = nodes[i], nodes[0]
+			}
+		}
+	}
+}
+
 // Filter removes nodes that are failing health checks (and any non-passing
 // check if that option is selected). Note that this returns the filtered
 // results AND modifies the receiver for performance.

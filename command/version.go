@@ -19,7 +19,7 @@ func (c *VersionCommand) Help() string {
 }
 
 func (c *VersionCommand) Run(_ []string) int {
-	c.UI.Output(fmt.Sprintf("Consul %s", c.HumanVersion))
+	c.UI.Output(fmt.Sprintf("Consul %sne", c.HumanVersion))
 
 	config := agent.DefaultConfig()
 	var supplement string
